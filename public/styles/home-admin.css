@@ -1,5 +1,5 @@
 .admin-dashboard {
-    margin: 1% 1% 0% 1%;
+    margin: 0.5% 4% 0% 4%;
     display: grid;
     grid-template-areas:
         "header header header"
@@ -37,7 +37,6 @@
     margin-right: 5%;
 }
 
-.player-list,
 .admin-profile {
     background-color: #fff;
 }
@@ -45,7 +44,7 @@
 .admin-profile {
     grid-area: admin-profile;
     border-radius: 2%;
-    margin: 6% 0% 6% 6%;
+    margin: 22% 0% 30% 8%;
 }
 
 .admin-infos {
@@ -56,7 +55,7 @@
     align-items: center;
 }
 
-.avatar {
+.avatar-admin {
     vertical-align: middle;
     margin: 5%;
     padding: 1%;
@@ -82,6 +81,11 @@
     list-style-type: none;
     margin: 0%;
     padding: 0%;
+}
+
+.admin-menu a {
+    text-decoration: none;
+    color: #000;
 }
 
 .admin-menu ul li {

@@ -30,14 +30,6 @@
       "password": "annaconda",
       "role": "ROLE_PLAYER",
       "score": 0
-    },
-    {
-      "first_name": "player",
-      "last_name": "player",
-      "email": "player@gmail.com",
-      "password": "player",
-      "role": "ROLE_PLAYER",
-      "score": 0
     }
   ],
   "questions": []

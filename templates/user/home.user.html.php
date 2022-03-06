@@ -19,11 +19,17 @@
             </p>
             <nav class="menu">
                 <ul class="menu-wrapper">
-                    <li><a href="<?= WEB_ROOT . '?controller=security&action=home-user' ?>">Accueil</a></li>
+                    <a href="<?= WEB_ROOT . '?controller=security&action=home-user' ?>">
+                        <li>Accueil</li>
+                    </a>
                     <?php if ($_SESSION['current_user']['role'] === "ROLE_ADMIN") : ?>
-                        <li><a href="">Questions</a></li>
+                        <a href="">
+                            <li>Questions</li>
+                        </a>
                     <?php endif ?>
-                    <li><a href="<?= WEB_ROOT . '?controller=security&action=logout' ?>">Déconnexion</a></li>
+                    <a href="<?= WEB_ROOT . '?controller=security&action=logout' ?>">
+                        <li>Déconnexion</li>
+                    </a>
                 </ul>
             </nav>
         </header>

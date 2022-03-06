@@ -15,3 +15,18 @@ function save_data($key, array $array)
     $newData = json_encode($arrayData);
     file_put_contents(PATH_DB, $newData);
 }
+
+ # TODO: à corriger
+function set_admin($oldUser)
+{
+    $currentData = file_get_contents(PATH_DB);
+    $arrayData = json_decode($currentData, true);
+    $users = $arrayData['users'];
+    foreach ($users as $user) {
+        if ($user == $oldUser) {
+            $oldUser['role'] = "ROLE_ADMIN";
+        }
+    }
+    $newData = json_encode($arrayData);
+    file_put_contents(PATH_DB, $newData);
+}

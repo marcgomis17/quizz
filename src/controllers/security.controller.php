@@ -26,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                 display_player_list();
                 break;
 
-            case 'player-list':
-                if (!is_admin()) {
+            case 'home-user':
+                if (!is_player()) {
                     header('location: ' . WEB_ROOT . '?controller=security&action=login');
                     exit();
                 }
-                display_player_list();
+                require_once PATH_TEMPLATES . 'user' . DIRECTORY_SEPARATOR . 'home.user.html.php';
                 break;
 
             case 'signup':
@@ -60,11 +60,11 @@ function signin_user($email, $password)
         $user = find_user_credentials($email, $password);
         if (count($user) != 0) {
             $_SESSION['current_user'] = $user;
-            if ($_SESSION['current_user']['role'] == "ROLE_ADMIN") {
+            if ($user['role'] == "ROLE_ADMIN") {
                 header('location: ' . WEB_ROOT . '?controller=security&action=home-admin');
                 exit();
             }
-            if ($_SESSION['current_user']['role'] == "ROLE_PLAYER") {
+            if ($user['role'] == "ROLE_PLAYER") {
                 header('location: ' . WEB_ROOT . '?controller=security&action=home-user');
                 exit();
             }
