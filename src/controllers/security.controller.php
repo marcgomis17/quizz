@@ -23,11 +23,23 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                     header('location: ' . WEB_ROOT . '?controller=security&action=login');
                     exit();
                 }
-                require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'home.admin.html.php';
+                display_player_list();
+                break;
+
+            case 'player-list':
+                if (!is_admin()) {
+                    header('location: ' . WEB_ROOT . '?controller=security&action=login');
+                    exit();
+                }
+                display_player_list();
                 break;
 
             case 'signup':
                 require_once PATH_TEMPLATES . 'user' . DIRECTORY_SEPARATOR . 'signup.html.php';
+                break;
+
+            case 'logout':
+                logout();
                 break;
 
             default:
@@ -66,4 +78,21 @@ function signin_user($email, $password)
         header('location:' . WEB_ROOT);
         exit();
     }
+}
+
+function display_player_list()
+{
+    ob_start();
+    $users = get_users();
+    require_once PATH_VIEWS . 'admin' . DIRECTORY_SEPARATOR . 'player-list.html.php';
+    $view = ob_get_clean();
+    require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'home.admin.html.php';
+}
+
+function logout()
+{
+    session_unset();
+    session_destroy();
+    header('location: ' . WEB_ROOT . '?controller=security&action=login');
+    exit();
 }

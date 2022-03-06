@@ -27,13 +27,13 @@
                         <small class="hidden"></small>
                     </div>
                     <div class="form-control icon password">
-                        <input type="text" name="password" id="password" placeholder="Password">
+                        <input type="password" name="password" id="password" placeholder="Password">
                         <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-password.png' ?>" alt="">
                         <small class="hidden"></small>
                     </div>
                     <div class="form-control submit">
                         <button type="submit" class="btn">Connexion</button>
-                        <p><a href="<?= WEB_ROOT . '?controller=user&action=signup' ?>">S'inscrire pour jouer?</a></p>
+                        <p><a href="<?= WEB_ROOT . '?controller=security&action=signup' ?>">S'inscrire pour jouer?</a></p>
                     </div>
                 </form>
             </div>

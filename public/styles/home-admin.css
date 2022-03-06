@@ -1,0 +1,107 @@
+.admin-dashboard {
+    margin: 1% 1% 0% 1%;
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "admin-profile menu-display menu-display";
+    column-gap: 2%;
+    background-color: lightgrey;
+}
+
+.admin-dashboard-header {
+    grid-area: header;
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.admin-dashboard-header h2 {
+    flex: 3;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 7%;
+}
+
+.admin-dashboard-header .btn {
+    height: 40px;
+    border: 1px solid #0ec9bfd5;
+    background-color: #0ec9bfd5;
+    padding: 0% 15% 0% 15%;
+}
+
+.admin-dashboard-header a {
+    margin-right: 5%;
+}
+
+.player-list,
+.admin-profile {
+    background-color: #fff;
+}
+
+.admin-profile {
+    grid-area: admin-profile;
+    border-radius: 2%;
+    margin: 6% 0% 6% 6%;
+}
+
+.admin-infos {
+    background: linear-gradient(0deg, #0ff, #fff);
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    vertical-align: middle;
+    margin: 5%;
+    padding: 1%;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 1px solid #64646448;
+    border-spacing: 2em;
+}
+
+#first-name,
+#last-name {
+    font-weight: bold;
+    color: #fff;
+    font-size: 20px;
+}
+
+#last-name {
+    text-indent: 40%;
+}
+
+.admin-menu ul {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+}
+
+.admin-menu ul li {
+    height: 50px;
+    padding-right: 2%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+}
+
+.admin-menu ul li:last-child {
+    margin-bottom: 1%;
+}
+
+.admin-menu ul li span {
+    flex: auto;
+    text-indent: 8%;
+}
+
+.admin-menu ul li:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
