@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_REQUEST['action'])) {
-        if ($_REQUEST['action'] == "login") {
+        if ($_REQUEST['action'] == "home-admin") {
             $email = $_POST['email'];
             $password = $_POST['password'];
             // signin_user($email, $password);
@@ -25,4 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     } else {
         require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'login.html.php';
     }
+}
+
+function signin_user($email, $password)
+{
+    
 }
