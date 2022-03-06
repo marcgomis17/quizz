@@ -67,7 +67,7 @@
             </div>
         </div>
     </div>
-    <script src="<?= PATH_PUBLIC . 'scripts' . DIRECTORY_SEPARATOR . 'signup-form.validation.js' ?>"></script>
+    <script src="<?= PATH_PUBLIC . 'scripts' . DIRECTORY_SEPARATOR . 'signup-form-validation.js' ?>"></script>
 </body>
 
 </html>

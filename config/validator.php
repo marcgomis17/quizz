@@ -12,3 +12,14 @@ function check_values(string $value, string $key, array &$errors)
         }
     }
 }
+
+
+function check_passwords(string $password, string $confirmPassword, string $key, array &$errors)
+{
+    if (strlen($password) < 6) {
+        $errors['passwords'] = "Le mot de passe doit contenir au moins 6 caracteres";
+    }
+    if ($password != $confirmPassword) {
+        $errors = "Les mots de passes sont differents";
+    }
+}
