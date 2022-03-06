@@ -15,6 +15,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($_REQUEST['action'] == "add-admin") {
             signup_user($firstName, $lastName, $email, $password, $confirmPassword, "ROLE_ADMIN");
         }
+        if ($_REQUEST['action'] == "add-question") {
+            $question = $_POST['question'];
+            $points = $_POST['points'];
+            $answerType = $_POST['answerType'];
+            $newQuestion = array(
+                "question" => $question,
+                "points" => $points,
+                "Type de reponse" => $answerType
+            );
+            add_question($newQuestion);
+        }
     }
 }
 
@@ -145,4 +156,11 @@ function add_question_display()
     require_once PATH_VIEWS . 'admin' . DIRECTORY_SEPARATOR . 'question-add.html.php';
     $view = ob_get_clean();
     require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'home.admin.html.php';
+}
+
+
+function add_question(array $question)
+{
+    save_data("questions", $question);
+    header('location: ' . WEB_ROOT . '?controller=user&action=add-question');
 }

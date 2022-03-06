@@ -32,5 +32,11 @@
       "score": 0
     }
   ],
-  "questions": []
+  "questions": [
+    {
+      "question": "Test 2",
+      "points": "1",
+      "Type de reponse": "unique"
+    }
+  ]
 }

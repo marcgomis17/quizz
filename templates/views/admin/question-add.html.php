@@ -2,6 +2,8 @@
     <h3>PARAMÉTREZ VOTRE QUESTION</h3>
     <div class="question-add-form-wrapper">
         <form id="question-add-form" action="" method="post">
+            <input type="hidden" name="controller" value="user">
+            <input type="hidden" name="action" value="add-question">
             <div class="form-control">
                 <label for="questions">Question</label>
                 <input class="input-add" type="text" name="question" id="questions">
@@ -15,8 +17,8 @@
                 <div class="inputs">
                     <select name="answerType" id="">
                         <option value="">Donnez le type de réponse</option>
-                        <option value="once">Choix unique</option>
-                        <option value="multi">Choix multiple</option>
+                        <option value="unique">Choix unique</option>
+                        <option value="multiple">Choix multiple</option>
                     </select>
                     <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout-reponse.png' ?>" alt="">
                 </div>
