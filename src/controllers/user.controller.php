@@ -1,11 +1,16 @@
 <?php
 
+require_once PATH_SRC . 'models' . DIRECTORY_SEPARATOR . 'user.model.php';
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_REQUEST['action'])) {
         if ($_REQUEST['action'] == "home-user") {
+            $firstName = $_POST['firstName'];
+            $lastName = $_POST['lastName'];
             $email = $_POST['email'];
             $password = $_POST['password'];
-            // signin_user($email, $password);
+            $confirmPassword = $_POST['passwordConfirm'];
+            signup_user($firstName, $lastName, $email, $password, $confirmPassword);
         }
     }
 }
@@ -16,6 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
             case 'signup':
                 break;
 
+            case 'home-user':
+                if (!is_connected()) {
+                    header('location: ' . WEB_ROOT . 'controller=security&action=login');
+                    exit();
+                }
+                require_once PATH_TEMPLATES . 'user' . DIRECTORY_SEPARATOR . 'home.user.html.php';
+                break;
             default:
                 break;
         }
