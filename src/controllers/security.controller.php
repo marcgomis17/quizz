@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     }
 }
-
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     if (isset($_REQUEST['action'])) {
         switch ($_REQUEST['action']) {
@@ -20,7 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                 break;
 
             default:
+                require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'login.html.php';
                 break;
         }
+    } else {
+        require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'login.html.php';
     }
 }

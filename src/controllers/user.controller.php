@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_REQUEST['action'])) {
-        if ($_REQUEST['action'] == "signup") {
+        if ($_REQUEST['action'] == "home-user") {
             $email = $_POST['email'];
             $password = $_POST['password'];
             // signin_user($email, $password);
