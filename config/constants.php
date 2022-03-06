@@ -12,7 +12,7 @@ define('PATH_TEMPLATES', ROOT . 'templates' . DIRECTORY_SEPARATOR);
 define('PATH_VIEWS', PATH_TEMPLATES . 'views' . DIRECTORY_SEPARATOR);
 
 //db
-define('PATH_DB', ROOT . 'data/db.json');
+define('PATH_DB', ROOT . 'data' . DIRECTORY_SEPARATOR . 'db.json');
 
 define('PATH_PUBLIC', str_replace('index.php', "", $_SERVER['SCRIPT_NAME']));
 
