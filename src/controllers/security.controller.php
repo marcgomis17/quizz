@@ -19,6 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                 break;
 
             case 'home-admin':
+                if (!is_admin()) {
+                    header('location: ' . WEB_ROOT . '?controller=security&action=login');
+                    exit();
+                }
                 require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'home.admin.html.php';
                 break;
 
@@ -44,8 +48,14 @@ function signin_user($email, $password)
         $user = find_user_credentials($email, $password);
         if (count($user) != 0) {
             $_SESSION['current_user'] = $user;
-            header('location: ' . WEB_ROOT . '?controller=security&action=home-admin');
-            exit();
+            if ($_SESSION['current_user']['role'] == "ROLE_ADMIN") {
+                header('location: ' . WEB_ROOT . '?controller=security&action=home-admin');
+                exit();
+            }
+            if ($_SESSION['current_user']['role'] == "ROLE_PLAYER") {
+                header('location: ' . WEB_ROOT . '?controller=security&action=home-user');
+                exit();
+            }
         } else {
             $_SESSION['login_errors'] = "Email ou mot de passe incorrect";
             header('location: ' . WEB_ROOT);
