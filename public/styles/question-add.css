@@ -21,6 +21,10 @@
     flex-direction: column;
 }
 
+#question-add-form img:hover {
+    cursor: pointer;
+}
+
 #question-add-form {
     width: 100%;
     margin-top: 4%;

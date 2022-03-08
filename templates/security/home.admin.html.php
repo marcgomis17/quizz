@@ -19,7 +19,10 @@
         <div class="admin-dashboard">
             <div class="admin-dashboard-header">
                 <h2>CRÉEZ ET PARAMÉTREZ VOS QUIZZ</h2>
-                <a href="<?= WEB_ROOT . '?controller=security&action=logout' ?>"><button class="btn">Déconnexion</button></a>
+                <div class="buttons">
+                    <a id="play" href="<?= WEB_ROOT . '?controller=security&action=logout' ?>"><button class="btn">Déconnexion</button></a>
+                    <a id="logout" href="<?= WEB_ROOT . '?controller=user&action=home-user' ?>"><button class="btn">Jouer</button></a>
+                </div>
             </div>
             <div class="admin-profile">
                 <div class="admin-infos">

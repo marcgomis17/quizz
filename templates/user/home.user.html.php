@@ -23,7 +23,7 @@
                         <li>Accueil</li>
                     </a>
                     <?php if ($_SESSION['current_user']['role'] === "ROLE_ADMIN") : ?>
-                        <a href="">
+                        <a href="<?= WEB_ROOT . '?controller=security&action=home-admin' ?>">
                             <li>Questions</li>
                         </a>
                     <?php endif ?>
