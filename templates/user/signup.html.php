@@ -28,12 +28,12 @@
 
                         <div class="form-control">
                             <label for="first-name">Prénoms</label>
-                            <input type="text" name="firstName" class="field" id="first-name" placeholder="Prénoms">
+                            <input type="text" name="firstName" class="field" id="prenom" placeholder="Prénoms">
                             <small class="hidden"></small>
                         </div>
                         <div class="form-control">
                             <label for="last-name">Nom</label>
-                            <input type="text" name="lastName" class="field" id="last-name" placeholder="Nom">
+                            <input type="text" name="lastName" class="field" id="nom" placeholder="Nom">
                             <small class="hidden"></small>
                         </div>
                         <div class="form-control">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="form-control">
                             <label for="password-confirm">Confirmer le mot de passe</label>
-                            <input type="password" name="passwordConfirm" class="field" id="password-confirm" placeholder="Confirmer le mot de passe">
+                            <input type="password" name="passwordConfirm" class="field" id="password" placeholder="Confirmer le mot de passe">
                             <small class="hidden"></small>
                         </div>
                         <div class="avatar-choice">

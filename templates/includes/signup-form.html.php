@@ -1,3 +1,4 @@
+<?php $current_page = "addAdmin" ?>
 <div class="form-modal">
     <div class="form-modal-header">
         <p><span id="modal-title">S'INSCRIRE</span><br>

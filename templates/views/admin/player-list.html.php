@@ -1,3 +1,4 @@
+<?php $current_page = "playerList" ?>
 <div class="player-list right-part">
     <h3>Liste des joueurs par score</h3>
     <div id="player-list-wrapper">

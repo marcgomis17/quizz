@@ -1,3 +1,21 @@
+<?php
+$title = "";
+switch ($current_page) {
+    case 'questionList':
+        $title = "Questions list";
+        break;
+
+    case 'addAdmin':
+        $title = "Add admin";
+        break;
+    case 'playerList':
+        $title = "Player list";
+        break;
+    case 'addQuestion':
+        $title = "Add question";
+        break;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +29,7 @@
     <link rel="stylesheet" href="<?= PATH_PUBLIC . 'styles' . DIRECTORY_SEPARATOR . 'player-list.css' ?>">
     <link rel="stylesheet" href="<?= PATH_PUBLIC . 'styles' . DIRECTORY_SEPARATOR . 'question-add.css' ?>">
     <link rel="stylesheet" href="<?= PATH_PUBLIC . 'styles' . DIRECTORY_SEPARATOR . 'home-admin.css' ?>">
-    <title>Quizz - Home</title>
+    <title><?= "Quizz - " . $title ?></title>
 </head>
 
 <body>
@@ -37,27 +55,43 @@
                         <div class="admin-menu">
                             <ul>
                                 <a href="<?= WEB_ROOT . "?controller=user&action=question-list" ?>">
-                                    <li>
+                                    <li class="list-item <?php if ($current_page === "questionList") : ?> active <?php endif; ?>">
                                         <span>Liste des questions</span>
-                                        <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-liste.png' ?>" alt="">
+                                        <?php if ($current_page === "questionList") : ?>
+                                            <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-liste-active.png' ?>" alt="">
+                                        <?php else : ?>
+                                            <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-liste.png' ?>" alt="">
+                                        <?php endif ?>
                                     </li>
                                 </a>
                                 <a href="<?= WEB_ROOT . "?controller=user&action=add-admin" ?>">
-                                    <li>
+                                    <li class="list-item <?php if ($current_page === "addAdmin") : ?> active <?php endif; ?>">
                                         <span>Créer un admin</span>
-                                        <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout.png' ?>" alt="">
+                                        <?php if ($current_page === "addAdmin") : ?>
+                                            <img src=" <?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout-active.png' ?>" alt="">
+                                        <?php else : ?>
+                                            <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout.png' ?>" alt="">
+                                        <?php endif ?>
                                     </li>
                                 </a>
                                 <a href="<?= WEB_ROOT . "?controller=user&action=player-list" ?>">
-                                    <li>
+                                    <li class="list-item <?php if ($current_page === "playerList") : ?> active <?php endif; ?>">
                                         <span>Liste des joueurs</span>
-                                        <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-liste-active.png' ?>" alt="">
+                                        <?php if ($current_page === "playerList") : ?>
+                                            <img src=" <?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-liste-active.png' ?>" alt="">
+                                        <?php else : ?>
+                                            <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-liste.png' ?>" alt="">
+                                        <?php endif ?>
                                     </li>
                                 </a>
                                 <a href="<?= WEB_ROOT . "?controller=user&action=add-question" ?>">
-                                    <li>
+                                    <li class="list-item <?php if ($current_page === "addQuestion") : ?> active <?php endif; ?>">
                                         <span>Créer une question</span>
-                                        <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout.png' ?>" alt="">
+                                        <?php if ($current_page === "addQuestion") : ?>
+                                            <img src=" <?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout-active.png' ?>" alt="">
+                                        <?php else : ?>
+                                            <img src="<?= PATH_PUBLIC . 'images' . DIRECTORY_SEPARATOR . 'icons' . DIRECTORY_SEPARATOR . 'ic-ajout.png' ?>" alt="">
+                                        <?php endif ?>
                                     </li>
                                 </a>
                             </ul>

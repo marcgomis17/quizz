@@ -6,18 +6,17 @@ var passwordField = document.querySelector('input[name=password]');
 var confirmPasswordField = document.querySelector('input[name=passwordConfirm]');
 
 function setString(field) {
-    var fieldName = field.name;
+    var fieldName = field.id;
     return fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1, fieldName.length);
 }
 
 function checkValues(field) {
     if (field.value == "") {
-        return "Champ obligatoire";
+        return setString(field) + " obligatoire";
     } else {
         if (field.name == "email") {
             const re = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
             if (field.value.match(re)) {
-                console.log("OK!");
                 return "";
             } else {
                 return setString(emailField) + " invalide";

@@ -125,3 +125,10 @@
     padding-bottom: 1%;
     border-radius: 2%;
 }
+
+/* ================================= Changing classes =========================== */
+.active {
+    border-left: 5px solid #4daf7c;
+    background-color: lightgrey;
+    font-weight: bold;
+}

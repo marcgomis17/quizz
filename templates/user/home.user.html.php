@@ -13,10 +13,12 @@
 <body>
     <div class="container">
         <header>
-            <p class="info-display">
-                <span class="user-name"><?= $_SESSION['current_user']['first_name'] . ' ' . $_SESSION['current_user']['last_name'] ?></span><br>
-                <span class="score"><?= 'Score: ' . $_SESSION['current_user']['score'] ?></span>
-            </p>
+            <div class="info-display">
+                <p class="user-name"><?= $_SESSION['current_user']['first_name'] . ' ' . $_SESSION['current_user']['last_name'] ?></p><br>
+                <?php if ($_SESSION['current_user']['role'] === "ROLE_PLAYER") : ?>
+                    <p class="score"><?= 'Score: ' . $_SESSION['current_user']['score'] ?></p>
+                <?php endif ?>
+            </div>
             <nav class="menu">
                 <ul class="menu-wrapper">
                     <a href="<?= WEB_ROOT . '?controller=user&action=home-user' ?>">

@@ -1,3 +1,4 @@
+<?php $current_page = "addQuestion" ?>
 <div class="question-add">
     <h3>PARAMÉTREZ VOTRE QUESTION</h3>
     <div class="question-add-form-wrapper">

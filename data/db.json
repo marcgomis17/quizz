@@ -30,13 +30,40 @@
       "password": "annaconda",
       "role": "ROLE_PLAYER",
       "score": 0
+    },
+    {
+      "first_name": "Marc O.",
+      "last_name": "Gomis",
+      "email": "marcgomis@gmail.com",
+      "password": "1234567",
+      "role": "ROLE_PLAYER",
+      "score": 0
     }
   ],
   "questions": [
     {
-      "question": "Test 2",
-      "points": "1",
-      "Type de reponse": "unique"
+      "question": "Quel est le Meilleur Language de Programmation en 2022",
+      "a": "Java",
+      "b": "C",
+      "c": "Python",
+      "d": "JavaScript",
+      "correct": "d"
+    },
+    {
+      "question": "Quel était le premier langage de programmation numérique de l’histoire?",
+      "a": "Fortran",
+      "b": "Assembly",
+      "c": "Short Code",
+      "d": "Algol",
+      "correct": "c"
+    },
+    {
+      "question": "Lequel des quatre langages suivants est le plus ancien?",
+      "a": "Java",
+      "b": "JavaScript",
+      "c": "Visual Basic",
+      "d": "C#",
+      "correct": "c"
     }
   ]
 }
