@@ -19,7 +19,7 @@
             </p>
             <nav class="menu">
                 <ul class="menu-wrapper">
-                    <a href="<?= WEB_ROOT . '?controller=security&action=home-user' ?>">
+                    <a href="<?= WEB_ROOT . '?controller=user&action=home-user' ?>">
                         <li>Accueil</li>
                     </a>
                     <?php if ($_SESSION['current_user']['role'] === "ROLE_ADMIN") : ?>

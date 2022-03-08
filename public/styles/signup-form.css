@@ -1,121 +1,122 @@
-.form-modal {
-    grid-area: menu-display;
-    margin: 1% 10% 1.5% 2%;
-    background-color: #fff;
-    display: grid;
-    grid-template-areas:
-        "modal-header modal-header"
-        "form-part avatar-display";
-    border-radius: 2%;
-}
+ .form-modal {
+     height: 100%;
+     grid-area: menu-display;
+     background-color: #fff;
+     display: grid;
+     grid-template-rows: 1fr 5fr;
+     border-radius: 2%;
+ }
 
-.form-modal-header {
-    grid-area: modal-header;
-    margin-top: 1%;
-}
+ /* ============= Modal header ============= */
+ .form-modal-header {
+     grid-row: 1fr;
+ }
 
-.form-modal-header p {
-    margin-left: 2.5%;
-}
+ .form-modal-header p {
+     margin-left: 3%;
+ }
 
-#modal-title {
-    font-size: 31px;
-    font-weight: bold;
-}
+ #modal-title {
+     font-size: 20px;
+     font-weight: bold;
+ }
 
-#modal-subtitle {
-    font-size: 21px;
-    color: #292929c4;
-}
+ #modal-subtitle {
+     font-size: 12px;
+     color: #292929c4;
+ }
 
-.separator {
-    height: 1px;
-    background-color: #808080;
-    border: 1px solid #808080;
-    width: 62%;
-    align-self: flex-start;
-}
+ .separator {
+     height: 1px;
+     background-color: #808080;
+     border: 1px solid #808080;
+     width: 62%;
+     align-self: flex-start;
+ }
 
-.form-part {
-    grid-area: form-part;
-    width: 100%;
-}
+ /* ================ Modal content ================== */
+ .form-content {
+     grid-row: 5fr;
+     height: 100%;
+     display: flex;
+     align-items: stretch;
+ }
 
-.form-wrapper {
-    padding-left: 5%;
-    margin-top: 2%;
-}
+ /* ================ Form part ====================== */
+ .form-part {
+     flex: 3;
+     height: 100%;
+ }
 
-#signup-form {
-    display: flex;
-    flex-direction: column;
-}
+ #signup-form {
+     padding-left: 5%;
+     width: 80%;
+ }
 
-#signup-form .form-control {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2%;
-}
+ #signup-form .form-control {
+     display: flex;
+     flex-direction: column;
+     margin-top: 2%;
+ }
 
-#signup-form label {
-    color: grey;
-}
+ #signup-form label {
+     color: grey;
+ }
 
-#signup-form .form-control input {
-    height: 45px;
-    text-indent: 2%;
-    background-color: #d3d3d346;
-    color: #000;
-    border: none;
-}
+ #signup-form .form-control input {
+     height: 35px;
+     text-indent: 2%;
+ }
 
-.avatar-display {
-    grid-area: avatar-display;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -6%;
-}
+ .avatar-choice {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 2%;
+     background-color: #fff;
+ }
 
-.avatar-signup {
-    vertical-align: middle;
-    width: 210px;
-    height: 210px;
-    border-radius: 50%;
-    border: 3px solid #37b2ff;
-}
+ .avatar-choice label {
+     width: 250%;
+     color: #000;
+ }
 
-.avatar-choice {
-    display: flex;
-    align-items: center;
-    margin-top: 2%;
-}
+ .submit {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
 
-.avatar-choice label {
-    width: 100%;
-    color: #000;
-}
+ #submit-btn {
+     padding: 2%;
+     height: 40px;
+     margin-top: 2%;
+ }
 
-#avatar-choice {
-    background-color: #fff;
-}
+ /* =============== Avatar part ==================== */
+ .avatar-display {
+     flex: 2;
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+ }
 
+ .avatar-signup {
+     vertical-align: middle;
+     width: 55%;
+     height: 40%;
+     border-radius: 50%;
+     border: 3px solid #37b2ff;
+     margin-top: -10%;
+ }
+
+ /*
 #avatar-choice::-webkit-file-upload-button {
     background-color: #40ffff;
     color: #fff;
-    padding: 6% 10% 6% 10%;
-    margin-left: 39%;
+    height: 40px;
+    margin-left: 20%;
     border: none;
     border-radius: 4%;
 }
-
-.submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2%;
-}
-
-#submit-btn {
-    padding: 2%;
-}
+*/

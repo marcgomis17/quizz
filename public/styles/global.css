@@ -8,6 +8,10 @@ body {
     margin: 0%;
 }
 
+.container {
+    height: 100vh;
+}
+
 .header {
     background-color: #052426;
     color: #fff;

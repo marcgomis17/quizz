@@ -32,9 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
     if (isset($_REQUEST['action'])) {
         switch ($_REQUEST['action']) {
-            case 'signup':
-                break;
-
             case 'home-user':
                 if (!is_connected()) {
                     header('location: ' . WEB_ROOT . 'controller=security&action=login');
@@ -48,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
                     header('location: ' . WEB_ROOT . '?controller=security&action=login');
                     exit();
                 }
-                // display_questions();
+                display_questions();
                 break;
 
             case 'add-admin':
@@ -140,14 +137,14 @@ function add_admin_display()
     require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'home.admin.html.php';
 }
 
-/* function display_questions()
+function display_questions()
 {
     ob_start();
-    $users = get_users();
-    require_once PATH_VIEWS . 'admin' . DIRECTORY_SEPARATOR . 'player-list.html.php';
+    $questions = read_data("questions");
+    require_once PATH_VIEWS . 'admin' . DIRECTORY_SEPARATOR . 'questions-list.html.php';
     $view = ob_get_clean();
     require_once PATH_TEMPLATES . 'security' . DIRECTORY_SEPARATOR . 'home.admin.html.php';
-} */
+}
 
 function add_question_display()
 {

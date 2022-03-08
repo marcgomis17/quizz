@@ -1,120 +1,127 @@
 .admin-dashboard {
-    margin: 0.5% 4% 0% 4%;
+    height: 85vh;
     display: grid;
-    grid-template-areas:
-        "header header header"
-        "admin-profile menu-display menu-display";
-    column-gap: 2%;
-    background-color: lightgrey;
+    grid-template-rows: 2fr 10fr;
+    margin: 1% 5% 0% 5%;
 }
 
+/* =========================== Dashboard header ========================*/
 .admin-dashboard-header {
-    grid-area: header;
+    grid-row: 2fr;
     background-color: aqua;
-    width: 100%;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
 
 .admin-dashboard-header h2 {
-    flex: 4;
+    flex: 5;
     text-align: center;
-    color: #fff;
-    font-weight: bold;
-    margin-left: 25%;
+    text-indent: 20%;
 }
 
 .buttons {
-    flex: 2;
+    flex: 1;
     width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-right: 1%;
 }
 
-.admin-dashboard-header .btn {
+.buttons button {
+    grid-column: 1fr;
+    width: 88%;
+    margin-right: 14%;
+    background-color: lightblue;
     height: 40px;
-    border: 1px solid #0ec9bfd5;
-    background-color: #0ec9bfd5;
-    padding: 0% 15% 0% 15%;
-    margin-left: 50%;
+    padding: 1% 3% 1% 3%;
 }
 
-.admin-dashboard-header a {
-    margin-right: 5%;
+/* =========================== Dashboard content ====================== */
+.dashboard-content {
+    grid-row: 10fr;
+    background-color: lightgrey;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 3fr 5fr;
+    column-gap: 3%;
+    padding: 1% 10% 1% 3%;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+}
+
+#left-part {
+    grid-column: 3fr;
 }
 
 .admin-profile {
-    background-color: #fff;
-}
-
-.admin-profile {
-    grid-area: admin-profile;
-    border-radius: 2%;
-    margin: 22% 0% 30% 8%;
+    display: flex;
+    flex-direction: column;
 }
 
 .admin-infos {
-    background: linear-gradient(0deg, #0ff, #fff);
-    border-top-left-radius: 2%;
-    border-top-right-radius: 2%;
+    border-top-left-radius: 3%;
+    border-top-right-radius: 3%;
     display: flex;
     align-items: center;
+    background: linear-gradient(0deg, aqua, #fff);
 }
 
 .avatar-admin {
     vertical-align: middle;
     margin: 5%;
     padding: 1%;
-    width: 110px;
-    height: 110px;
+    width: 25%;
+    height: 25%;
     border-radius: 50%;
     border: 1px solid #64646448;
     border-spacing: 2em;
 }
 
-#first-name,
-#last-name {
-    font-weight: bold;
+#username {
     color: #fff;
+    font-weight: bold;
     font-size: 20px;
 }
 
-#last-name {
-    text-indent: 40%;
+.admin-menu {
+    background-color: #fff;
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
 }
 
 .admin-menu ul {
     list-style-type: none;
-    margin: 0%;
-    padding: 0%;
+    padding-left: 0%;
 }
 
-.admin-menu a {
+.admin-menu ul a {
     text-decoration: none;
     color: #000;
 }
 
 .admin-menu ul li {
     height: 50px;
-    padding-right: 2%;
-    margin-top: 3%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-}
-
-.admin-menu ul li:last-child {
-    margin-bottom: 1%;
-}
-
-.admin-menu ul li span {
-    flex: auto;
-    text-indent: 8%;
+    padding-right: 5%;
+    margin-top: 4%;
+    padding-left: 10%;
 }
 
 .admin-menu ul li:hover {
-    cursor: pointer;
     background-color: lightgrey;
+}
+
+.right-part {
+    background-color: #fff;
+    grid-column: 2fr;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1%;
+    border-radius: 2%;
 }
